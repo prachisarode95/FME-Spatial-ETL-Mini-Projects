@@ -16,11 +16,7 @@ This is a hands-on exercise from the **FME Form Basic course** by Safe Software,
 
 ---
 
-## Workflow Overview
-
-![Image](https://github.com/user-attachments/assets/8ac4e0f0-aa73-45ec-8521-36ab971d9bbc)
-
-The data transformation process followed these steps:
+## The data transformation process followed these steps:
 
 1. **Fetch JSON Data** using `HTTPCaller` from a web URL.
 2. **Parse JSON** with `JSONFragmenter` to extract individual records.
@@ -69,13 +65,6 @@ The data transformation process followed these steps:
 
 ---
 
-## Demo
-
-- [Watch Workspace Running in FME Workbench](https://github.com/user-attachments/assets/b592e7fd-39fc-4f47-8ee1-c8b9ca6b057d)  
-- [Watch Final Output with Sorted Data in FME Data Inspector](https://github.com/user-attachments/assets/19ac9722-8a62-4abd-b245-282a6cb6369b)
-
----
-
 # FME Form Basic Course - Day 2: Join Tables Exercise
 This project is a part of my learning journey through the FME Form Basic Course provided by Safe Software Academy. In this exercise, I explored the Joiner transformer to combine data from two different tables based on a shared key field.
 
@@ -99,13 +88,9 @@ Objective: To learn how to join data tables using the Joiner transformer in FME 
 ## Tools & Technologies
 FME Workbench 2024.2.1
 
-## Project Demonstration
-Workspace Screenshot/: 
-![Image](https://github.com/user-attachments/assets/b4851ec1-aa0e-4d87-af84-ac7a614d1a6c)
+---
 
-Demo/: https://github.com/user-attachments/assets/5d3e7ac2-c07a-4eae-847f-0b566328d8c5
-
-## What I Learned
+## Lessons Learned
 - How to use the Joiner transformer to enrich spatial data with attribute information
 
 - The importance of matching key fields when joining datasets
