@@ -73,6 +73,9 @@ This is a hands-on exercise from the **FME Form Basic course** by Safe Software.
 
 ---
 
+## Demo
+[![Demo Video](thumbnail.png)](https://github.com/user-attachments/assets/be993918-595a-4f70-8b1b-fb9ec0f58118)
+
 ## File Structure
 ```
 Flood_Risk_Assessment_Using_Conditional_Values/
