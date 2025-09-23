@@ -3,7 +3,7 @@
 [![FME](https://img.shields.io/badge/FME-Data_Integration-orange?logo=safe-software&logoColor=white)](https://www.safe.com/fme/)  
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-Welcome to my learning repository showcasing hands-on ETL automation projects built while completing official FME training by [Safe Software](https://www.safe.com/). This repository is designed to highlight my growing expertise in **FME Form (formerly Desktop)** and **FME Flow (formerly Server)**, especially for **Spatial Data Automation Roles**.
+This is a hands-on ETL automation repository built while completing official FME training by [Safe Software](https://www.safe.com/). It is designed to highlight my growing expertise in **FME Form (formerly Desktop)** and **FME Flow (formerly Server)**, especially for **Spatial Data Automation Roles**.
 
 ---
 
@@ -15,12 +15,11 @@ Each folder documents exercises and mini-projects built from real Safe Academy t
 |--------|-------------|--------|
 | [`FME_Form_Basic`](./FME_Form_Basic/) | Mini-projects from FME Form Basic Course (20 hours) | Completed |
 | `FME_Form_Advanced` | In-progress workflows using advanced parameterization, schema mapping, dynamic fanouts, and writers (~30 hours) | In Progress |
-| `FME_Flow_Authoring` | To-be-added: automation and publishing projects using FME Flow (20 hours) | Planned (Aug 2025) |
+| `FME_Flow_Authoring` | To-be-added: automation and publishing projects using FME Flow (20 hours) | Planned |
 
 ---
 
-## What You'll Find Here
-
+## Lessons learned
 - Practical use of **core and advanced transformers**
 - Workflows designed with **parameters, schema mapping**, and **conditional logic**
 - Error handling, logging, and **debugging best practices**
@@ -42,21 +41,13 @@ Each folder documents exercises and mini-projects built from real Safe Academy t
 
 ---
 
-## Why This Repo?
+## Purpose
 
-After a career break (May 2022 - Jun 2024), I'm transitioning into **ETL/Data Automation roles** where FME is a core tool. This repository reflects my structured effort to:
+I'm transitioning into **ETL/Data Automation roles** where FME is a core tool. This repository reflects my structured effort to:
 - Gain official FME certifications
 - Translate learning into reusable mini-projects
 - Build confidence and credibility for **Spatial Data Engineering Opportunities**
 
----
-
-## Each folder includes:
-- `.fmw` workspace files  
-- Exercise description  
-- Data
-- Workspace Screenshot  
-- Lessons learned
 ---
 
 ## Let’s Connect
@@ -66,4 +57,4 @@ Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/prachisar
 
 ---
 
-> *This repository is continuously updated as I explore more FME capabilities and real-world use cases.*
+> *This repository is updated as I explore more FME capabilities and real-world use cases.*
