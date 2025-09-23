@@ -1,8 +1,8 @@
-# Flood Risk Assessment Using Conditional Values
+# Flood Risk Assessment Using Conditional Values Using FME Form Tools
 
 ## About the exercise
 
-This is a hands-on exercise from the **FME Form Basic course** by Safe Software, under the "Use Conditional Values" path. It demonstrates how to assign flood risk scores to address points by using conditional logic based on elevation and proximity to coastal zones. The entire workflow was built and executed using **FME Workbench 2024.2**, showcasing real-world attribute transformation and spatial analysis techniques.
+This is a hands-on exercise from the **FME Form Basic course** by Safe Software. It demonstrates **how to assign flood risk scores to address points by using conditional logic based on elevation and proximity to coastal zones.** The entire workflow was built and executed using **FME Workbench 2024.2**, showcasing **real-world attribute transformation** and **spatial analysis techniques.**
 
 ---
 
@@ -17,10 +17,6 @@ This is a hands-on exercise from the **FME Form Basic course** by Safe Software,
 ---
 
 ## Workflow Overview
-
-![Image](https://github.com/user-attachments/assets/7dd00345-14f4-493f-b854-6adb3ee61576)
-
-The data transformation process followed these steps:
 
 1. **Read Input Datasets**:  
    - Postal addresses  
@@ -75,12 +71,6 @@ The data transformation process followed these steps:
 ✔️ Understood the importance of data preparation for spatial risk analysis  
 ✔️ Completed a mini-project demonstrating both spatial and attribute transformations in FME
 
----
-
-## Demo
-
-- [Watch Workspace Execution](https://github.com/user-attachments/assets/333b38e9-28e4-4648-81e3-a97e9da006b4)
-  
 ---
 
 ## File Structure
