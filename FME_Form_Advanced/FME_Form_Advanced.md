@@ -2,7 +2,7 @@
 
 Welcome to my hands-on journey through the [FME Form Advanced](https://academy.safe.com/path/fme-form-advanced) training by Safe Software. This course builds on core FME skills and introduces advanced techniques like workspace parameterization, schema evolution, modular design, and dynamic data handling. 
 
-This repository contains structured, real-world-inspired **mini-projects** developed from course modules to demonstrate my practical expertise with FME Form at an intermediate to advanced level.
+This repository contains structured, real-world-inspired projects developed from course modules to demonstrate my practical expertise with FME Form at an intermediate to advanced level.
 
 ---
 
@@ -12,22 +12,6 @@ This repository contains structured, real-world-inspired **mini-projects** devel
 - Automate workflows using parameters and fanouts
 - Design for schema flexibility and data variability
 - Optimize performance and handle schema changes dynamically
-
----
-
-## Course Overview
-
-| Course | Level | Modules | Status |
-|--------|--------|---------|--------|
-| [FME Form Advanced](https://academy.safe.com/path/fme-form-advanced) | Intermediate–Advanced | 15 Modules | In Progress (July–Aug 2025) |
-
-This folder is a live collection of exercise-based mini-projects that demonstrate my ability to apply advanced FME concepts in spatial and non-spatial data automation workflows.
-
----
-## Project Structure
-
-The course is divided into two parts. Each day contains focused exercises which I've converted into sub-projects, organized into folders with workflows, explanations, and screenshots.
-
 ---
 
 ### Part 1 – Advanced Design, Performance & Automation
@@ -107,9 +91,7 @@ Each module/project includes:
 
 ---
 
-## Status
-
-**In Progress** – July & August 2025  
-I am actively converting each course module into a documented, recruiter-ready project as part of my FME Data Automation portfolio.
+## Status - **In Progress**  
+I am actively learning the course modules and building projects as part of my GIS Data Automation portfolio.
 
 ---
