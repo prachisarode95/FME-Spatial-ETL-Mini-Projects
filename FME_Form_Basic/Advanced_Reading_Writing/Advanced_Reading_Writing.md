@@ -1,16 +1,6 @@
-# Mini Project: Advanced Reading & Writing with FME Form
+# Advanced Reading & Writing
 
-[![FME Form](https://img.shields.io/badge/FME-Form%202024-orange?logo=fme)](https://www.safe.com/fme/)
-[![Course Module](https://img.shields.io/badge/Module-Day%204%20Completed-brightgreen)](https://academy.safe.com/path/fme-form-basic/design-workspaces-for-advanced-reading-and-writing/155975)
-[![Skill Focus](https://img.shields.io/badge/Focus-Advanced%20Reading%20%26%20Writing-blue)](#)
-
-This mini project showcases my work on **Day 4** of the [FME Form Basic course](https://academy.safe.com/path/fme-form-basic/design-workspaces-for-advanced-reading-and-writing/155975), where I built a workspace to read multiple feature types, write to multiple destinations, and control writing behavior through writer order and schema mapping. It represents hands-on learning of **advanced reading and writing concepts in FME**.
-
----
-
-## What I Did
-
-I completed a guided exercise series that involved:
+## Skills Gained
 
 - Reading multiple feature types from a **GML (Geography Markup Language)** dataset
 - Writing outputs to **multiple Excel sheets** and **GML files** using **Feature Type Fanout**
@@ -21,7 +11,7 @@ I completed a guided exercise series that involved:
 
 ---
 
-## Project Workflow Overview
+## Workflow
 
 ### Input:
 - A single GML dataset containing several layers (e.g., Parcels, Roads, Zoning)
@@ -68,6 +58,3 @@ Advanced_Reading_Writing/
 ├── Design Workspaces for Advanced Reading and Writing.PNG # Visual guide or reference image
 └── exercise-set-reader-and-writer-parameters-complete.fmw # Final FME workspace with configured parameters
 ```
----
-
-> This mini-project reflects my commitment to learning FME deeply and applying it to real-world GIS data challenges.
