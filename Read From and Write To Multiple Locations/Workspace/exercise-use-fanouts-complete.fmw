@@ -1,0 +1,1066 @@
+#! <?xml version="1.0" encoding="UTF-8" ?>
+#! <WORKSPACE
+#    Command line to run this workspace:
+#        "C:\Program Files\FME 2024.1\fme.exe" "G:\Shared drives\Customer Education\Training\2024\FME Form Advanced\Advanced Updates Aug 2024\exercise-use-fanouts-complete.fmw"
+#          --FEATURE_TYPES "GarbageSchedule Libraries Parks"
+#          --DestDataset_GENERIC "C:\FMEData\Output\Training\CommunityMapping.zip"
+#          --OutputFormat "ESRISHAPE"
+#          --FME_LAUNCH_VIEWER_APP "YES"
+#    
+#!   A0_PREVIEW_IMAGE="data:image/png;base64,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"
+#!   ARCGIS_COMPATIBILITY="ARCGIS_AUTO"
+#!   ATTR_TYPE_ENCODING="SDF"
+#!   BEGIN_PYTHON=""
+#!   BEGIN_TCL=""
+#!   CATEGORY=""
+#!   DESCRIPTION=""
+#!   DESTINATION="NONE"
+#!   DESTINATION_ROUTING_FILE=""
+#!   DOC_EXTENTS="1195.22 71"
+#!   DOC_TOP_LEFT="-2324.64 409.632"
+#!   END_PYTHON=""
+#!   END_TCL=""
+#!   EXPLICIT_BOOKMARK_ORDER="false"
+#!   FME_BUILD_NUM="24612"
+#!   FME_BULK_MODE_THRESHOLD=""
+#!   FME_DOCUMENT_GUID="941d8e56-1cf3-4671-9594-b14007bd3972"
+#!   FME_DOCUMENT_PRIORGUID="78003d20-45cd-400d-850e-89c632931f6c,36341376-904e-4723-936b-88b14cbafaf7,eae6f912-dcec-45be-97af-ee7a2db04fba,582a935c-46ae-4f59-a8c6-2a010fa8c7c1"
+#!   FME_GEOMETRY_HANDLING="Enhanced"
+#!   FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
+#!   FME_NAMES_ENCODING="windows-1252"
+#!   FME_REPROJECTION_ENGINE="FME"
+#!   FME_SERVER_SERVICES=""
+#!   FME_STROKE_MAX_DEVIATION="0"
+#!   HISTORY=""
+#!   IGNORE_READER_FAILURE="No"
+#!   LAST_SAVE_BUILD="FME(R) 2024.1.0.0 (20240628 - Build 24612 - WIN64)"
+#!   LAST_SAVE_DATE="2024-08-20T14:30:09"
+#!   LOG_FILE=""
+#!   LOG_MAX_RECORDED_FEATURES="200"
+#!   MARKDOWN_DESCRIPTION=""
+#!   MARKDOWN_USAGE=""
+#!   MAX_LOG_FEATURES="200"
+#!   MULTI_WRITER_DATASET_ORDER="BY_ID"
+#!   PASSWORD=""
+#!   PYTHON_COMPATIBILITY="37"
+#!   REDIRECT_TERMINATORS="NONE"
+#!   SAVE_ON_PROMPT_AND_RUN="Yes"
+#!   SHOW_ANNOTATIONS="true"
+#!   SHOW_INFO_NODES="true"
+#!   SOURCE="NONE"
+#!   SOURCE_ROUTING_FILE=""
+#!   TERMINATE_REJECTED="YES"
+#!   TITLE=""
+#!   USAGE=""
+#!   USE_MARKDOWN=""
+#!   VIEW_POSITION="-3559.41 681.257"
+#!   WARN_INVALID_XFORM_PARAM="Yes"
+#!   WORKSPACE_VERSION="1"
+#!   ZOOM_SCALE="100"
+#! >
+#! <DATASETS>
+#! <DATASET
+#!   IS_SOURCE="true"
+#!   ROLE="READER"
+#!   FORMAT="FILEGDB"
+#!   DATASET="https://s3.amazonaws.com/FMEData/FMEData/Data/CommunityMapping/CommunityMap.gdb.zip"
+#!   KEYWORD="FILEGDB_1"
+#!   MULTI_GEOM_ALLOWED="false"
+#!   ATTR_MAX_LENGTH="0"
+#!   ATTR_CASE="ANY"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE="filegdb_type {FME_GEN_GEOMETRY} filegdb_where_wwjd &quot;&quot;"
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="fme_basename text(50) fme_color text(50) fme_dataset text(50) fme_feature_type text(50) fme_fill_color text(50) fme_geometry text(50) fme_primary_axis double fme_rotation double fme_secondary_axis double fme_start_angle double fme_sweep_angle double fme_text_size double fme_text_string text(50) fme_type text(50) multi_reader_full_id int multi_reader_id int multi_reader_keyword text(50) multi_reader_type text(50)"
+#!   DEFLINE_PARMS="&quot;GUI OPTIONAL NAMEDGROUP filegdb_table_settings_group filegdb_where_wwjd Table Settings&quot; &quot;&quot; &quot;GUI OPTIONAL TEXT_EDIT_SQL_CFG filegdb_where_wwjd MODE,WHERE;FORMAT,FILEGDB WHERE Clause&quot; &quot;&quot; "
+#!   ATTR_INDEX_TYPES="Indexed"
+#!   ATTR_NAME_INVALID_CHARS=""
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="GEODATABASE"
+#!   FTTR_TYPE="FEATURE_TYPES_ENCODED"
+#!   GENERATE_FME_BUILD_NUM="19238"
+#!   COORDSYS=""
+#!   FEATURE_TYPES="$(FEATURE_TYPES)"
+#!   MAX_FEATURES=""
+#!   MAX_FEATURES_PER_FEATURE_TYPE=""
+#!   MIN_FEATURES=""
+#!   START_FEATURE=""
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ADVANCED_PARMS"
+#!   VALUE="FILEGDB_IN_BEGIN_SQL FILEGDB_IN_END_SQL FILEGDB_OUT_BEGIN_SQL FILEGDB_OUT_END_SQL"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="ATTRIBUTE_READING"
+#!   VALUE="DEFLINE"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="ATTRIBUTE_READING_HISTORIC"
+#!   VALUE="ALL"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="DATASET_NAME"
+#!   VALUE="gdb file"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_DEFAULT_NAME"
+#!   VALUE="FeatureClass1"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="FEATURE_TYPE_NAME"
+#!   VALUE="Feature Class or Table"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="READER_DATASET_HINT"
+#!   VALUE="Select the File Geodatabase folder"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="WRITER_DATASET_HINT"
+#!   VALUE="Specify File Geodatabase folder"
+#! />
+#! </DATASET>
+#! <DATASET
+#!   IS_SOURCE="false"
+#!   ROLE="WRITER"
+#!   FORMAT="GENERIC"
+#!   DATASET="$(DestDataset_GENERIC)"
+#!   KEYWORD="GENERIC_1"
+#!   MULTI_GEOM_ALLOWED="false"
+#!   ATTR_MAX_LENGTH="200"
+#!   ATTR_CASE="ANY"
+#!   ALLOWED_FEAT_TYPES=""
+#!   WRITE_DEFS="true"
+#!   DEFLINE_TEMPLATE="fme_type {FME_GEN_GEOMETRY}"
+#!   DEFLINE_ATTRS="true"
+#!   EXPOSABLE_ATTRS="fme_basename char(50) fme_color char(50) fme_dataset char(50) fme_feature_type char(50) fme_fill_color char(50) fme_format_long_name char(255) fme_format_short_name char(255) fme_geometry char(50) fme_primary_axis real64 fme_rotation real64 fme_secondary_axis real64 fme_start_angle real64 fme_sweep_angle real64 fme_text_size real64 fme_text_string char(50) fme_type char(50)"
+#!   DEFLINE_PARMS=""
+#!   ATTR_INDEX_TYPES=""
+#!   ATTR_NAME_INVALID_CHARS=""
+#!   SUPPORTS_FEATURE_TYPE_FANOUT="true"
+#!   ENABLED="true"
+#!   DYNAMIC_FEATURE_TYPES_LIST_ON_MERGE="true"
+#!   DATASET_TYPE="FILEURLDIR"
+#!   FTTR_TYPE=""
+#!   GENERATE_FME_BUILD_NUM="19238"
+#!   COORDSYS=""
+#!   FANOUT_EXPRESSION="&lt;Unused&gt;"
+#!   FANOUT_GROUP="NO"
+#! >
+#! <METAFILE_PARAMETER
+#!   NAME="ADVANCED_PARMS"
+#!   VALUE="READER_SCHEMAS_TO_SKIP"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="AUTO_PUBLISH"
+#!   VALUE="SourceDataset DestDataset GENERIC_OUT_FORMAT"
+#! />
+#! <METAFILE_PARAMETER
+#!   NAME="MIME_TYPE"
+#!   VALUE="text/plain"
+#! />
+#! </DATASET>
+#! </DATASETS>
+#! <DATA_TYPES>
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="text(width)"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="text(width)"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="text(2048)"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="text(2048)"
+#!   FME_TYPE="fme_xml"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="text(2048)"
+#!   FME_TYPE="fme_json"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="blob"
+#!   FME_TYPE="fme_binarybuffer"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="blob"
+#!   FME_TYPE="fme_varbinary(width)"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="blob"
+#!   FME_TYPE="fme_binary(width)"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="date"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="date"
+#!   FME_TYPE="fme_date"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="date"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="single"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="double"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="double"
+#!   FME_TYPE="fme_decimal(width,decimal)"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="double"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="text(20)"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="text(20)"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="smallint"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="int"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="smallint"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="smallint"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="smallint"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="objectid"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="guid"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="globalid"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="FILEGDB"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="char(width)"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="varchar(width)"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="buffer"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="xml"
+#!   FME_TYPE="fme_xml"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="json"
+#!   FME_TYPE="fme_json"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="binary(width)"
+#!   FME_TYPE="fme_binary(width)"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="varbinary(width)"
+#!   FME_TYPE="fme_varbinary(width)"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="binarybuffer"
+#!   FME_TYPE="fme_binarybuffer"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="datetime"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="date"
+#!   FME_TYPE="fme_date"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="time"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="decimal(width,decimal)"
+#!   FME_TYPE="fme_decimal(width,decimal)"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="real32"
+#!   FME_TYPE="fme_real32"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="real64"
+#!   FME_TYPE="fme_real64"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="int32"
+#!   FME_TYPE="fme_int32"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="uint32"
+#!   FME_TYPE="fme_uint32"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="int64"
+#!   FME_TYPE="fme_int64"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="uint64"
+#!   FME_TYPE="fme_uint64"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="boolean"
+#!   FME_TYPE="fme_boolean"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="int16"
+#!   FME_TYPE="fme_int16"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="uint16"
+#!   FME_TYPE="fme_uint16"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="char"
+#!   FME_TYPE="fme_int8"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="uint8"
+#!   FME_TYPE="fme_uint8"
+#!   FORMAT="GENERIC"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="copied"
+#!   FME_TYPE="fme_buffer"
+#!   FORMAT="GENERIC"
+#! />
+#! </DATA_TYPES>
+#! <GEOM_TYPES>
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geodb_point"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="FILEGDB"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geodb_polygon"
+#!   FME_TYPE="fme_area"
+#!   FORMAT="FILEGDB"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geodb_polygon"
+#!   FME_TYPE="fme_rounded_rectangle"
+#!   FORMAT="FILEGDB"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geodb_polyline"
+#!   FME_TYPE="fme_line"
+#!   FORMAT="FILEGDB"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geodb_multipoint"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="FILEGDB"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geodb_polygon"
+#!   FME_TYPE="fme_rectangle"
+#!   FORMAT="FILEGDB"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geodb_point"
+#!   FME_TYPE="fme_text"
+#!   FORMAT="FILEGDB"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geodb_polyline"
+#!   FME_TYPE="fme_arc"
+#!   FORMAT="FILEGDB"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geodb_polygon"
+#!   FME_TYPE="fme_ellipse"
+#!   FORMAT="FILEGDB"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geodb_no_geom"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="FILEGDB"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geodb_polygon"
+#!   FME_TYPE="fme_raster"
+#!   FORMAT="FILEGDB"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geodb_polyline"
+#!   FME_TYPE="fme_surface"
+#!   FORMAT="FILEGDB"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geodb_polyline"
+#!   FME_TYPE="fme_solid"
+#!   FORMAT="FILEGDB"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geodb_polygon"
+#!   FME_TYPE="fme_point_cloud"
+#!   FORMAT="FILEGDB"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geodb_no_geom"
+#!   FME_TYPE="fme_feature_table"
+#!   FORMAT="FILEGDB"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="geodb_no_geom"
+#!   FME_TYPE="fme_collection"
+#!   FORMAT="FILEGDB"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_point"
+#!   FME_TYPE="fme_point"
+#!   FORMAT="GENERIC"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_line"
+#!   FME_TYPE="fme_line"
+#!   FORMAT="GENERIC"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_area"
+#!   FME_TYPE="fme_area"
+#!   FORMAT="GENERIC"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_text"
+#!   FME_TYPE="fme_text"
+#!   FORMAT="GENERIC"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_ellipse"
+#!   FME_TYPE="fme_ellipse"
+#!   FORMAT="GENERIC"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_arc"
+#!   FME_TYPE="fme_arc"
+#!   FORMAT="GENERIC"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_rectangle"
+#!   FME_TYPE="fme_rectangle"
+#!   FORMAT="GENERIC"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_rounded_rectangle"
+#!   FME_TYPE="fme_rounded_rectangle"
+#!   FORMAT="GENERIC"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_raster"
+#!   FME_TYPE="fme_raster"
+#!   FORMAT="GENERIC"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_solid"
+#!   FME_TYPE="fme_solid"
+#!   FORMAT="GENERIC"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_surface"
+#!   FME_TYPE="fme_surface"
+#!   FORMAT="GENERIC"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_no_geom"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="GENERIC"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_collection"
+#!   FME_TYPE="fme_collection"
+#!   FORMAT="GENERIC"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_any"
+#!   FME_TYPE="fme_no_geom"
+#!   FORMAT="GENERIC"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_area"
+#!   FME_TYPE="fme_point_cloud"
+#!   FORMAT="GENERIC"
+#! />
+#! <GEOM_TYPE
+#!   IS_SOURCE="false"
+#!   FORMAT_TYPE="fme_no_geom"
+#!   FME_TYPE="fme_feature_table"
+#!   FORMAT="GENERIC"
+#! />
+#! </GEOM_TYPES>
+#! <FEATURE_TYPES>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="true"
+#!   NODE_NAME="FoodVendors"
+#!   FEATURE_TYPE_NAME=""
+#!   FEATURE_TYPE_NAME_QUALIFIER=""
+#!   IS_EDITABLE="false"
+#!   IDENTIFIER="2"
+#!   FEAT_GEOMTYPE="geodb_point"
+#!   POSITION="-2324.6439064390643 480.63215632156317"
+#!   BOUNDING_RECT="-2324.6439064390643 480.63215632156317 454 71"
+#!   ORDER="500000000000001"
+#!   COLLAPSED="false"
+#!   KEYWORD="FILEGDB_1"
+#!   PARMS_EDITED="false"
+#!   ENABLED="true"
+#!   HIDDEN_USER_ATTRS=""
+#!   READ_SELECT_ATTRS="false"
+#!   MERGE_FILTER="*"
+#!   MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
+#!   MERGE_FILTER_CASE_SENSITIVE="true"
+#!   DYNAMIC_SCHEMA="true"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="VendorID" ATTR_TYPE="smallint" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="VendorName" ATTR_TYPE="text(48)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="VendorDescription" ATTR_TYPE="text(16)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="OBJECTID" ATTR_TYPE="objectid" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Subzone" ATTR_TYPE="text(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="LibraryID" ATTR_TYPE="text(6)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="ParkURL" ATTR_TYPE="text(100)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="CentreName" ATTR_TYPE="text(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="LibraryURL" ATTR_TYPE="text(80)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="CentreURL" ATTR_TYPE="text(50)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Schedule" ATTR_TYPE="text(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="LibraryName" ATTR_TYPE="text(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="StationName" ATTR_TYPE="text(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Description" ATTR_TYPE="text(75)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Zone" ATTR_TYPE="text(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="BookCount" ATTR_TYPE="int" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="ParkName" ATTR_TYPE="text(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Regulation" ATTR_TYPE="text(75)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="FountainID" ATTR_TYPE="smallint" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="LibraryAddress" ATTR_TYPE="text(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Circulation" ATTR_TYPE="int" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="ParkAddress" ATTR_TYPE="text(50)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Location" ATTR_TYPE="text(50)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="CentreAddress" ATTR_TYPE="text(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="NumAddresses" ATTR_TYPE="smallint" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="UserVisits" ATTR_TYPE="int" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Maintainer" ATTR_TYPE="text(16)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="fme_feature_type" ATTR_TYPE="text(50)"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="filegdb_table_settings_group" PARM_VALUE=""/>
+#!     <DEFLINE_PARM PARM_NAME="filegdb_where_wwjd" PARM_VALUE=""/>
+#! </FEATURE_TYPE>
+#! <FEATURE_TYPE
+#!   IS_SOURCE="false"
+#!   NODE_NAME="NewFeatureType"
+#!   FEATURE_TYPE_NAME="@Value(fme_feature_type)"
+#!   FEATURE_TYPE_NAME_QUALIFIER=""
+#!   IS_EDITABLE="false"
+#!   IDENTIFIER="3"
+#!   FEAT_GEOMTYPE="fme_any"
+#!   POSITION="-1634.4223442234422 480.63215632156312"
+#!   BOUNDING_RECT="-1634.4223442234422 480.63215632156312 505 71"
+#!   ORDER="500000000000000"
+#!   COLLAPSED="false"
+#!   KEYWORD="GENERIC_1"
+#!   PARMS_EDITED="true"
+#!   ENABLED="true"
+#!   SCHEMA_ATTRIBUTE_SOURCE="0"
+#! >
+#!     <FEAT_ATTRIBUTE ATTR_NAME="VendorID" ATTR_TYPE="int16" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="VendorName" ATTR_TYPE="varchar(48)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="VendorDescription" ATTR_TYPE="varchar(16)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="OBJECTID" ATTR_TYPE="int32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Subzone" ATTR_TYPE="varchar(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="LibraryID" ATTR_TYPE="varchar(6)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="ParkURL" ATTR_TYPE="varchar(100)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="CentreName" ATTR_TYPE="varchar(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="LibraryURL" ATTR_TYPE="varchar(80)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="CentreURL" ATTR_TYPE="varchar(50)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Schedule" ATTR_TYPE="varchar(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="LibraryName" ATTR_TYPE="varchar(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="StationName" ATTR_TYPE="varchar(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Description" ATTR_TYPE="varchar(75)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Zone" ATTR_TYPE="varchar(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="BookCount" ATTR_TYPE="int32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="ParkName" ATTR_TYPE="varchar(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Regulation" ATTR_TYPE="varchar(75)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="FountainID" ATTR_TYPE="int16" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="LibraryAddress" ATTR_TYPE="varchar(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Circulation" ATTR_TYPE="int32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="ParkAddress" ATTR_TYPE="varchar(50)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Location" ATTR_TYPE="varchar(50)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="CentreAddress" ATTR_TYPE="varchar(30)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="NumAddresses" ATTR_TYPE="int16" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="UserVisits" ATTR_TYPE="int32" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="Maintainer" ATTR_TYPE="varchar(16)" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#!     <FEAT_ATTRIBUTE ATTR_NAME="fme_feature_type" ATTR_TYPE="varchar(50)"  EXPOSABLE_ATTR="true" ATTR_HAS_PORT="true" ATTR_VALUE=""/>
+#! </FEATURE_TYPE>
+#! </FEATURE_TYPES>
+#! <FMESERVER>
+#! <READER_DATASETS>
+#! <DATASET
+#!   NAME="FILEGDB_1"
+#!   OVERRIDE="-FILEGDB_1_DATASET"
+#!   DATASET="FILEGDB_1/CommunityMap.gdb.zip"
+#! />
+#! </READER_DATASETS>
+#! <WRITER_DATASETS>
+#! <DATASET
+#!   NAME="GENERIC_1"
+#!   OVERRIDE="-GENERIC_1_DATASET"
+#!   DATASET="GENERIC_1/CommunityMapping.zip"
+#! />
+#! </WRITER_DATASETS>
+#! </FMESERVER>
+#! <GLOBAL_PARAMETERS>
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI OPTIONAL FEATURE_TYPES_ENCODED FEATURE_TYPES https:&lt;solidus&gt;&lt;solidus&gt;s3.amazonaws.com&lt;solidus&gt;FMEData&lt;solidus&gt;FMEData&lt;solidus&gt;Data&lt;solidus&gt;CommunityMapping&lt;solidus&gt;CommunityMap.gdb.zip,_FORMAT_OVERRIDE_,FILEGDB,FME_CONNECTION_GROUP,,ADVANCED,,BEGIN_SQL,,END_SQL,,STRIP_GUID_GLOBALID_BRACES,yes,GEOMETRY,,SIMPLE_DONUT_GEOMETRY,simple,USE_SEARCH_ENVELOPE,NO,SEARCH_ENVELOPE_MINX,0,SEARCH_ENVELOPE_MINY,0,SEARCH_ENVELOPE_MAXX,0,SEARCH_ENVELOPE_MAXY,0,SEARCH_ENVELOPE_COORDINATE_SYSTEM,,CLIP_TO_ENVELOPE,NO,NETWORK_AUTHENTICATION,,COORDSYS,,START_FEATURE,,MAX_FEATURES,,MAX_FEATURES_PER_FEATURE_TYPE,,MIN_FEATURES,,QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,Yes,DYNAMIC_WORKFLOW,yes,_MERGE_SCHEMAS,YES,_MERGE_SCHEMAS,YES Feature Types to Read:"
+#!   DEFAULT_VALUE="GarbageSchedule Libraries Parks"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI DIRNAME DestDataset_GENERIC Destination Generic (Any Format) Folder:"
+#!   DEFAULT_VALUE="C:\FMEData\Output\Training\CommunityMapping.zip"
+#!   IS_STAND_ALONE="false"
+#! />
+#! <GLOBAL_PARAMETER
+#!   GUI_LINE="GUI LOOKUP_CHOICE OutputFormat Autodesk&lt;space&gt;AutoCAD&lt;space&gt;DWG&lt;solidus&gt;DXF,ACAD%Esri&lt;space&gt;Shapefile,ESRISHAPE%GML&lt;space&gt;&lt;openparen&gt;Geography&lt;space&gt;Markup&lt;space&gt;Language&lt;closeparen&gt;,GML%MapInfo&lt;space&gt;TAB&lt;space&gt;&lt;openparen&gt;MITAB&lt;closeparen&gt;,MITAB Select Output Format:"
+#!   DEFAULT_VALUE="ESRISHAPE"
+#!   IS_STAND_ALONE="true"
+#! />
+#! </GLOBAL_PARAMETERS>
+#! <USER_PARAMETERS
+#!   FORM="eyJwYXJhbWV0ZXJzIjpbeyJuYW1lIjoiRkVBVFVSRV9UWVBFUyIsInByb21wdCI6IkZlYXR1cmUgVHlwZXMgdG8gUmVhZDoiLCJ2YWx1ZVR5cGUiOiJzdHJpbmdFbmNvZGVkUGFydHMiLCJyZXF1aXJlZCI6ZmFsc2UsImRlZmF1bHRWYWx1ZSI6IkdhcmJhZ2VTY2hlZHVsZSBMaWJyYXJpZXMgUGFya3MiLCJjaG9pY2VTZXR0aW5ncyI6eyJjaG9pY2VTZXQiOiJyZWFkZXJWYWx1ZXMiLCJ2YWx1ZXNUb1VzZSI6ImZlYXR1cmVUeXBlcyIsImZvcm1hdCI6IkZJTEVHREIiLCJkYXRhc2V0IjoiaHR0cHM6PHNvbGlkdXM+PHNvbGlkdXM+czMuYW1hem9uYXdzLmNvbTxzb2xpZHVzPkZNRURhdGE8c29saWR1cz5GTUVEYXRhPHNvbGlkdXM+RGF0YTxzb2xpZHVzPkNvbW11bml0eU1hcHBpbmc8c29saWR1cz5Db21tdW5pdHlNYXAuZ2RiLnppcCIsImNvbmZpZ3VyYXRpb24iOlt7Im5hbWUiOiJGTUVfQ09OTkVDVElPTl9HUk9VUCIsInZhbHVlIjoiIn0seyJuYW1lIjoiQURWQU5DRUQiLCJ2YWx1ZSI6IiJ9LHsibmFtZSI6IkJFR0lOX1NRTCIsInZhbHVlIjoiIn0seyJuYW1lIjoiRU5EX1NRTCIsInZhbHVlIjoiIn0seyJuYW1lIjoiU1RSSVBfR1VJRF9HTE9CQUxJRF9CUkFDRVMiLCJ2YWx1ZSI6InllcyJ9LHsibmFtZSI6IkdFT01FVFJZIiwidmFsdWUiOiIifSx7Im5hbWUiOiJTSU1QTEVfRE9OVVRfR0VPTUVUUlkiLCJ2YWx1ZSI6InNpbXBsZSJ9LHsibmFtZSI6IlVTRV9TRUFSQ0hfRU5WRUxPUEUiLCJ2YWx1ZSI6Ik5PIn0seyJuYW1lIjoiU0VBUkNIX0VOVkVMT1BFX01JTlgiLCJ2YWx1ZSI6IjAifSx7Im5hbWUiOiJTRUFSQ0hfRU5WRUxPUEVfTUlOWSIsInZhbHVlIjoiMCJ9LHsibmFtZSI6IlNFQVJDSF9FTlZFTE9QRV9NQVhYIiwidmFsdWUiOiIwIn0seyJuYW1lIjoiU0VBUkNIX0VOVkVMT1BFX01BWFkiLCJ2YWx1ZSI6IjAifSx7Im5hbWUiOiJTRUFSQ0hfRU5WRUxPUEVfQ09PUkRJTkFURV9TWVNURU0iLCJ2YWx1ZSI6IiJ9LHsibmFtZSI6IkNMSVBfVE9fRU5WRUxPUEUiLCJ2YWx1ZSI6Ik5PIn0seyJuYW1lIjoiTkVUV09SS19BVVRIRU5USUNBVElPTiIsInZhbHVlIjoiIn0seyJuYW1lIjoiQ09PUkRTWVMiLCJ2YWx1ZSI6IiJ9LHsibmFtZSI6IlNUQVJUX0ZFQVRVUkUiLCJ2YWx1ZSI6IiJ9LHsibmFtZSI6Ik1BWF9GRUFUVVJFUyIsInZhbHVlIjoiIn0seyJuYW1lIjoiTUFYX0ZFQVRVUkVTX1BFUl9GRUFUVVJFX1RZUEUiLCJ2YWx1ZSI6IiJ9LHsibmFtZSI6Ik1JTl9GRUFUVVJFUyIsInZhbHVlIjoiIn0seyJuYW1lIjoiUVVFUllfRkVBVFVSRV9UWVBFU19GT1JfTUVSR0VfRklMVEVSUyIsInZhbHVlIjoiWWVzIn0seyJuYW1lIjoiRFlOQU1JQ19XT1JLRkxPVyIsInZhbHVlIjoieWVzIn0seyJuYW1lIjoiX01FUkdFX1NDSEVNQVMiLCJ2YWx1ZSI6IllFUyJ9LHsibmFtZSI6Il9NRVJHRV9TQ0hFTUFTIiwidmFsdWUiOiJZRVMifSx7Im5hbWUiOiJSRVRSSUVWRV9BTExfVEFCTEVfTkFNRVMiLCJ2YWx1ZSI6IllFUyJ9XX0sInR5cGUiOiJsaXN0Ym94In0seyJuYW1lIjoiRGVzdERhdGFzZXRfR0VORVJJQyIsInByb21wdCI6IkRlc3RpbmF0aW9uIEdlbmVyaWMgKEFueSBGb3JtYXQpIEZvbGRlcjoiLCJ2YWx1ZVR5cGUiOiJzdHJpbmciLCJyZXF1aXJlZCI6dHJ1ZSwiZGVmYXVsdFZhbHVlIjoiQzpcXEZNRURhdGFcXE91dHB1dFxcVHJhaW5pbmdcXENvbW11bml0eU1hcHBpbmcuemlwIiwic3VwcG9ydGVkVmFsdWVUeXBlcyI6WyJnbG9iYWxQYXJhbWV0ZXIiXSwiZGVwcmVjYXRlZEZsYWdzIjpbIm5vbmUiXSwidHlwZSI6ImZpbGUiLCJzZWxlY3RNdWx0aXBsZSI6ZmFsc2UsIml0ZW1zVG9TZWxlY3QiOiJmb2xkZXJzIiwiYWNjZXNzTW9kZSI6IndyaXRlIiwidmFsaWRhdGVFeGlzdGVuY2UiOmZhbHNlfSx7Im5hbWUiOiJPdXRwdXRGb3JtYXQiLCJwcm9tcHQiOiJTZWxlY3QgT3V0cHV0IEZvcm1hdDoiLCJ2YWx1ZVR5cGUiOiJzdHJpbmciLCJyZXF1aXJlZCI6dHJ1ZSwiZGVmYXVsdFZhbHVlIjoiRVNSSVNIQVBFIiwic3VwcG9ydGVkVmFsdWVUeXBlcyI6WyJnbG9iYWxQYXJhbWV0ZXIiXSwiZGVwcmVjYXRlZEZsYWdzIjpbIm5vbmUiXSwiY2hvaWNlU2V0dGluZ3MiOnsic29ydCI6Im5vU29ydCIsImNob2ljZXMiOlt7ICJkaXNwbGF5IiA6ICJBdXRvZGVzayBBdXRvQ0FEIERXRy9EWEYiLCAidmFsdWUiIDogIkFDQUQiIH0seyAiZGlzcGxheSIgOiAiRXNyaSBTaGFwZWZpbGUiLCAidmFsdWUiIDogIkVTUklTSEFQRSIgfSx7ICJkaXNwbGF5IiA6ICJHTUwgKEdlb2dyYXBoeSBNYXJrdXAgTGFuZ3VhZ2UpIiwgInZhbHVlIiA6ICJHTUwiIH0seyAiZGlzcGxheSIgOiAiTWFwSW5mbyBUQUIgKE1JVEFCKSIsICJ2YWx1ZSIgOiAiTUlUQUIiIH1dLCJjaG9pY2VTZXQiOiJ1c2VyRGVmaW5lZCJ9LCJ0eXBlIjoiZHJvcGRvd24ifV19"
+#! >
+#! <PARAMETER_INFO>
+#!     <INFO NAME="FEATURE_TYPES" 
+#!   DEFAULT_VALUE="GarbageSchedule Libraries Parks"
+#!   SCOPE="DEPENDENT"
+#!   GENERATED_GUI_LINE="false"
+#!   GUI_LINE="GUI OPTIONAL FEATURE_TYPES_ENCODED FEATURE_TYPES https:&lt;solidus&gt;&lt;solidus&gt;s3.amazonaws.com&lt;solidus&gt;FMEData&lt;solidus&gt;FMEData&lt;solidus&gt;Data&lt;solidus&gt;CommunityMapping&lt;solidus&gt;CommunityMap.gdb.zip,_FORMAT_OVERRIDE_,FILEGDB,FME_CONNECTION_GROUP,,ADVANCED,,BEGIN_SQL,,END_SQL,,STRIP_GUID_GLOBALID_BRACES,yes,GEOMETRY,,SIMPLE_DONUT_GEOMETRY,simple,USE_SEARCH_ENVELOPE,NO,SEARCH_ENVELOPE_MINX,0,SEARCH_ENVELOPE_MINY,0,SEARCH_ENVELOPE_MAXX,0,SEARCH_ENVELOPE_MAXY,0,SEARCH_ENVELOPE_COORDINATE_SYSTEM,,CLIP_TO_ENVELOPE,NO,NETWORK_AUTHENTICATION,,COORDSYS,,START_FEATURE,,MAX_FEATURES,,MAX_FEATURES_PER_FEATURE_TYPE,,MIN_FEATURES,,QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,Yes,DYNAMIC_WORKFLOW,yes,_MERGE_SCHEMAS,YES,_MERGE_SCHEMAS,YES Feature Types to Read:"
+#! />
+#!     <INFO NAME="DestDataset_GENERIC" 
+#!   DEFAULT_VALUE="C:\FMEData\Output\Training\CommunityMapping.zip"
+#!   SCOPE="DEPENDENT"
+#!   GENERATED_GUI_LINE="false"
+#!   GUI_LINE="GUI DIRNAME DestDataset_GENERIC Destination Generic (Any Format) Folder:"
+#! />
+#!     <INFO NAME="OutputFormat" 
+#!   DEFAULT_VALUE="ESRISHAPE"
+#!   SCOPE="STAND_ALONE"
+#!   GENERATED_GUI_LINE="false"
+#!   GUI_LINE="GUI LOOKUP_CHOICE OutputFormat Autodesk&lt;space&gt;AutoCAD&lt;space&gt;DWG&lt;solidus&gt;DXF,ACAD%Esri&lt;space&gt;Shapefile,ESRISHAPE%GML&lt;space&gt;&lt;openparen&gt;Geography&lt;space&gt;Markup&lt;space&gt;Language&lt;closeparen&gt;,GML%MapInfo&lt;space&gt;TAB&lt;space&gt;&lt;openparen&gt;MITAB&lt;closeparen&gt;,MITAB Select Output Format:"
+#! />
+#! </PARAMETER_INFO>
+#! </USER_PARAMETERS>
+#! <COMMENTS>
+#! </COMMENTS>
+#! <CONSTANTS>
+#! </CONSTANTS>
+#! <BOOKMARKS>
+#! </BOOKMARKS>
+#! <TRANSFORMERS>
+#! </TRANSFORMERS>
+#! <FEAT_LINKS>
+#! <FEAT_LINK
+#!   IDENTIFIER="4"
+#!   SOURCE_NODE="2"
+#!   TARGET_NODE="3"
+#!   SOURCE_PORT_DESC="-1"
+#!   TARGET_PORT_DESC="-1"
+#!   ENABLED="true"
+#!   EXECUTION_IDX="0"
+#!   HIDDEN="false"
+#!   COLOUR="0.050980392156862744,0.050980392156862744,0.047058823529411764,1"
+#!   PEN_WIDTH="4"
+#!   PEN_STYLE="1"
+#!   LINK_STYLE_NAME="&lt;Default&gt;"
+#!   EXTRA_POINTS=""
+#! />
+#! </FEAT_LINKS>
+#! <BREAKPOINTS>
+#! </BREAKPOINTS>
+#! <ATTR_LINKS>
+#! </ATTR_LINKS>
+#! <SUBDOCUMENTS>
+#! </SUBDOCUMENTS>
+#! <LOOKUP_TABLES>
+#! </LOOKUP_TABLES>
+#! </WORKSPACE>
+
+FME_PYTHON_VERSION 37
+ARCGIS_COMPATIBILITY ARCGIS_AUTO
+GUI IGNORE SourceDataset_FILEGDB_1,FILEGDB_IN_FME_CONNECTION_GROUP_FILEGDB_1,FILEGDB_IN_ADVANCED_FILEGDB_1,FILEGDB_IN_BEGIN_SQL_FILEGDB_1,FILEGDB_IN_END_SQL_FILEGDB_1,FILEGDB_IN_STRIP_GUID_GLOBALID_BRACES_FILEGDB_1,FILEGDB_IN_GEOMETRY_FILEGDB_1,FILEGDB_IN_SIMPLE_DONUT_GEOMETRY_FILEGDB_1,FILEGDB_IN_USE_SEARCH_ENVELOPE_FILEGDB_1,FILEGDB_IN_SEARCH_ENVELOPE_MINX_FILEGDB_1,FILEGDB_IN_SEARCH_ENVELOPE_MINY_FILEGDB_1,FILEGDB_IN_SEARCH_ENVELOPE_MAXX_FILEGDB_1,FILEGDB_IN_SEARCH_ENVELOPE_MAXY_FILEGDB_1,FILEGDB_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_FILEGDB_1,FILEGDB_IN_CLIP_TO_ENVELOPE_FILEGDB_1,FILEGDB_IN_NETWORK_AUTHENTICATION_FILEGDB_1,DestDataset_GENERIC_1,GENERIC_OUT_FME_GROUP_NAMED1_GENERIC_1,GENERIC_OUT_FORMAT_GENERIC_1,GENERIC_OUT_BASE_NAME_GENERIC_1,GENERIC_OUT_FME_GROUP_NAMED2_GENERIC_1,GENERIC_OUT_MIME_TYPE_GENERIC_1
+# ============================================================================
+DEFAULT_MACRO FEATURE_TYPES GarbageSchedule Libraries Parks
+
+DEFAULT_MACRO DestDataset_GENERIC C:\FMEData\Output\Training\CommunityMapping.zip
+
+DEFAULT_MACRO OutputFormat ESRISHAPE
+
+# ============================================================================
+INCLUDE [ if {{$(DestDataset_GENERIC$encode)} == {}} { puts_real {Parameter 'DestDataset_GENERIC' must be given a value.}; exit 1; }; ]
+INCLUDE [ if {{$(OutputFormat$encode)} == {}} { puts_real {Parameter 'OutputFormat' must be given a value.}; exit 1; }; ]
+#! START_HEADER
+#! START_WB_HEADER
+READER_TYPE MULTI_READER
+MULTI_READER_TYPE{0} FILEGDB
+MULTI_READER_KEYWORD{0} FILEGDB_1
+MULTI_READER_GEN_DIRECTIVES{0} SEARCH_ENVELOPE_COORDINATE_SYSTEM,,END_SQL,,USE_SEARCH_ENVELOPE,NO,QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS,Yes,SIMPLE_DONUT_GEOMETRY,simple,TABLELIST,,SEARCH_ENVELOPE_MINX,0,SEARCH_ENVELOPE_MAXY,0,DYNAMIC_WORKFLOW,yes,SEARCH_ENVELOPE_MINY,0,ADVANCED,,BEGIN_SQL,,STRIP_GUID_GLOBALID_BRACES,yes,_MERGE_SCHEMAS,YES,FILEGDB_EXPOSE_FORMAT_ATTRS,,EXPOSE_ATTRS_GROUP,,GEOMETRY,,CLIP_TO_ENVELOPE,NO,SEARCH_ENVELOPE_MAXX,0
+WRITER_TYPE MULTI_WRITER
+WRITER_KEYWORD PRIMARY_DEST
+PRIMARY_DEST_DATASET_ORDER BY_ID
+PRIMARY_DEST_FIRST_WRITER_ID 0
+PRIMARY_DEST_TYPE{0} GENERIC
+PRIMARY_DEST_KEYWORD{0} GENERIC_1
+#! END_WB_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "FILEGDB_1"
+#! END_WB_HEADER
+#! START_SOURCE_HEADER FILEGDB FILEGDB_1
+FILEGDB_1_DYNAMIC_WORKFLOW YES
+# The dataset this mapping file was generated from was:
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO SourceDataset
+INCLUDE [ if {{$(SourceDataset)} != ""} {                        \
+ puts {DEFAULT_MACRO SourceDataset_FILEGDB_1 $(SourceDataset)}     \
+ } ]
+#! END_WB_HEADER
+#! START_SOURCE_HEADER FILEGDB FILEGDB_1
+DEFAULT_MACRO SourceDataset_FILEGDB_1 https://s3.amazonaws.com/FMEData/FMEData/Data/CommunityMapping/CommunityMap.gdb.zip
+GUI SOURCE_GEODATABASE SourceDataset_FILEGDB_1 File Geodatabase:
+DEFAULT_MACRO FILEGDB_IN_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS_FILEGDB_1 Yes
+FILEGDB_1_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS "$(FILEGDB_IN_QUERY_FEATURE_TYPES_FOR_MERGE_FILTERS_FILEGDB_1)"
+DEFAULT_MACRO FILEGDB_IN_FME_CONNECTION_GROUP_FILEGDB_1 
+GUI OPTIONAL DISCLOSUREGROUP FILEGDB_IN_FME_CONNECTION_GROUP_FILEGDB_1 FILEGDB_IN_NAMED_CONNECTION Database Connection
+DEFAULT_MACRO FILEGDB_IN_ADVANCED_FILEGDB_1 
+GUI OPTIONAL DISCLOSUREGROUP FILEGDB_IN_ADVANCED_FILEGDB_1 FILEGDB_IN_BEGIN_SQL_FILEGDB_1%FILEGDB_IN_END_SQL_FILEGDB_1%FILEGDB_IN_GEOMETRY_FILEGDB_1%FILEGDB_IN_STRIP_GUID_GLOBALID_BRACES_FILEGDB_1 Advanced
+DEFAULT_MACRO FILEGDB_IN_BEGIN_SQL_FILEGDB_1 
+FILEGDB_1_BEGIN_SQL "$(FILEGDB_IN_BEGIN_SQL_FILEGDB_1)"
+GUI OPTIONAL TEXT_EDIT_SQL_CFG FILEGDB_IN_BEGIN_SQL_FILEGDB_1 MODE,SQL;FORMAT,FILEGDB SQL To Run Before Read
+DEFAULT_MACRO FILEGDB_IN_END_SQL_FILEGDB_1 
+FILEGDB_1_END_SQL "$(FILEGDB_IN_END_SQL_FILEGDB_1)"
+GUI OPTIONAL TEXT_EDIT_SQL_CFG FILEGDB_IN_END_SQL_FILEGDB_1 MODE,SQL;FORMAT,FILEGDB SQL To Run After Read
+DEFAULT_MACRO FILEGDB_IN_STRIP_GUID_GLOBALID_BRACES_FILEGDB_1 yes
+FILEGDB_1_STRIP_GUID_GLOBALID_BRACES "$(FILEGDB_IN_STRIP_GUID_GLOBALID_BRACES_FILEGDB_1)"
+GUI CHOICE FILEGDB_IN_STRIP_GUID_GLOBALID_BRACES_FILEGDB_1 yes%no Strip braces off GlobalID and GUID:
+DEFAULT_MACRO FILEGDB_IN_GEOMETRY_FILEGDB_1 
+GUI OPTIONAL DISCLOSUREGROUP FILEGDB_IN_GEOMETRY_FILEGDB_1 FILEGDB_IN_SIMPLE_DONUT_GEOMETRY_FILEGDB_1 Geometry
+# ============================================================================
+# Option to use simple donut geometry creation, which is faster than the
+# original creation method, but less meticulous at detecting and correcting
+# geometric anomalies
+DEFAULT_MACRO FILEGDB_IN_SIMPLE_DONUT_GEOMETRY_FILEGDB_1 simple
+FILEGDB_1_SIMPLE_DONUT_GEOMETRY "$(FILEGDB_IN_SIMPLE_DONUT_GEOMETRY_FILEGDB_1)"
+GUI LOOKUP_CHOICE FILEGDB_IN_SIMPLE_DONUT_GEOMETRY_FILEGDB_1 "\"Orientation Only\",simple"%"\"Orientation and Spatial Relationship\",complex" Donut Geometry Detection
+DEFAULT_MACRO FILEGDB_IN_EXPOSE_ATTRS_GROUP_FILEGDB_1 
+FILEGDB_1_EXPOSE_ATTRS_GROUP "$(FILEGDB_IN_EXPOSE_ATTRS_GROUP_FILEGDB_1)"
+# Include this file in source setting section to add native search envelope processing
+# Zero as a default means we don't do any search -- this makes workbench happier
+DEFAULT_MACRO FILEGDB_IN_USE_SEARCH_ENVELOPE_FILEGDB_1 NO
+FILEGDB_1_USE_SEARCH_ENVELOPE "$(FILEGDB_IN_USE_SEARCH_ENVELOPE_FILEGDB_1)"
+GUI ACTIVEDISCLOSUREGROUP FILEGDB_IN_USE_SEARCH_ENVELOPE_FILEGDB_1 FILEGDB_IN_SEARCH_ENVELOPE_MINX_FILEGDB_1%FILEGDB_IN_SEARCH_ENVELOPE_MINY_FILEGDB_1%FILEGDB_IN_SEARCH_ENVELOPE_MAXX_FILEGDB_1%FILEGDB_IN_SEARCH_ENVELOPE_MAXY_FILEGDB_1%FILEGDB_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_FILEGDB_1%FILEGDB_IN_CLIP_TO_ENVELOPE_FILEGDB_1%FILEGDB_IN_SEARCH_METHOD%FILEGDB_IN_SEARCH_METHOD_FILTER%FILEGDB_IN_SEARCH_ORDER%FILEGDB_IN_SEARCH_FEATURE%FILEGDB_IN_DUMMY_SEARCH_ENVELOPE_PARAMETER Use Search Envelope
+# ===========================================================================
+GUI LOOKUP FILEGDB_IN_SEARCH_ENVELOPE_MINX_FILEGDB_1 <Unused>,0 
+DEFAULT_MACRO FILEGDB_IN_SEARCH_ENVELOPE_MINX_FILEGDB_1 0
+FILEGDB_1_SEARCH_ENVELOPE "$(FILEGDB_IN_SEARCH_ENVELOPE_MINX_FILEGDB_1)"
+GUI OPTIONAL FLOAT FILEGDB_IN_SEARCH_ENVELOPE_MINX_FILEGDB_1 Minimum X:
+# ===========================================================================
+GUI LOOKUP FILEGDB_IN_SEARCH_ENVELOPE_MINY_FILEGDB_1 <Unused>,0 
+DEFAULT_MACRO FILEGDB_IN_SEARCH_ENVELOPE_MINY_FILEGDB_1 0
+FILEGDB_1_SEARCH_ENVELOPE "$(FILEGDB_IN_SEARCH_ENVELOPE_MINY_FILEGDB_1)"
+GUI OPTIONAL FLOAT FILEGDB_IN_SEARCH_ENVELOPE_MINY_FILEGDB_1 Minimum Y:
+# ===========================================================================
+GUI LOOKUP FILEGDB_IN_SEARCH_ENVELOPE_MAXX_FILEGDB_1 <Unused>,0 
+DEFAULT_MACRO FILEGDB_IN_SEARCH_ENVELOPE_MAXX_FILEGDB_1 0
+FILEGDB_1_SEARCH_ENVELOPE "$(FILEGDB_IN_SEARCH_ENVELOPE_MAXX_FILEGDB_1)"
+GUI OPTIONAL FLOAT FILEGDB_IN_SEARCH_ENVELOPE_MAXX_FILEGDB_1 Maximum X:
+# ===========================================================================
+GUI LOOKUP FILEGDB_IN_SEARCH_ENVELOPE_MAXY_FILEGDB_1 <Unused>,0 
+DEFAULT_MACRO FILEGDB_IN_SEARCH_ENVELOPE_MAXY_FILEGDB_1 0
+FILEGDB_1_SEARCH_ENVELOPE "$(FILEGDB_IN_SEARCH_ENVELOPE_MAXY_FILEGDB_1)"
+GUI OPTIONAL FLOAT FILEGDB_IN_SEARCH_ENVELOPE_MAXY_FILEGDB_1 Maximum Y:
+# ===========================================================================
+GUI LOOKUP FILEGDB_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_FILEGDB_1 <Unused>, 
+DEFAULT_MACRO FILEGDB_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_FILEGDB_1 
+FILEGDB_1_SEARCH_ENVELOPE "$(FILEGDB_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_FILEGDB_1)"
+GUI OPTIONAL COORDSYS FILEGDB_IN_SEARCH_ENVELOPE_COORDINATE_SYSTEM_FILEGDB_1 Search Envelope Coordinate System:
+# ===========================================================================
+GUI LOOKUP FILEGDB_IN_CLIP_TO_ENVELOPE_FILEGDB_1 <Unused>,NO 
+DEFAULT_MACRO FILEGDB_IN_CLIP_TO_ENVELOPE_FILEGDB_1 NO
+FILEGDB_1_CLIP_TO_ENVELOPE "$(FILEGDB_IN_CLIP_TO_ENVELOPE_FILEGDB_1)"
+GUI OPTIONAL CHECKBOX FILEGDB_IN_CLIP_TO_ENVELOPE_FILEGDB_1 YES%NO Clip to Search Envelope
+#
+# ===========================================================================
+DEFAULT_MACRO FILEGDB_IN_NETWORK_AUTHENTICATION_FILEGDB_1 
+FILEGDB_1_NETWORK_AUTHENTICATION "$(FILEGDB_IN_NETWORK_AUTHENTICATION_FILEGDB_1)"
+GUI OPTIONAL AUTHENTICATOR FILEGDB_IN_NETWORK_AUTHENTICATION_FILEGDB_1 CONTAINER%GROUP%CONTAINER_TITLE%"Network Authentication"%PROMPT_TYPE%NETWORK Network Authentication
+# ============================================================================ 
+DEFAULT_MACRO FILEGDB_IN_ATTRIBUTE_READING_FILEGDB_1 DEFLINE
+FILEGDB_1_ATTRIBUTE_READING "$(FILEGDB_IN_ATTRIBUTE_READING_FILEGDB_1)"
+# ============================================================================ 
+FILEGDB_1_GENERATE_FME_BUILD_NUM 19238
+FILEGDB_1_DATASET "$(SourceDataset_FILEGDB_1)"
+#! END_SOURCE_HEADER
+#! START_WB_HEADER
+MACRO WB_KEYWORD "GENERIC_1"
+#! END_WB_HEADER
+#! START_DEST_HEADER GENERIC GENERIC_1
+# ============================================================================
+#
+#! END_DEST_HEADER
+#! START_WB_HEADER
+DEFAULT_MACRO DestDataset
+INCLUDE [ if {"$(DestDataset)" != ""} {                          \
+ puts {DEFAULT_MACRO DestDataset_GENERIC_1 $(DestDataset)}         \
+ } ]
+#! END_WB_HEADER
+#! START_DEST_HEADER GENERIC GENERIC_1
+DEFAULT_MACRO DestDataset_GENERIC_1 $(DestDataset_GENERIC)
+GUI DIRNAME DestDataset_GENERIC_1 Destination Generic (Any Format) Folder:
+DEFAULT_MACRO GENERIC_OUT_FME_GROUP_NAMED1_GENERIC_1 
+GUI OPTIONAL DISCLOSUREGROUP GENERIC_OUT_FME_GROUP_NAMED1_GENERIC_1 GENERIC_OUT_FORMAT_GENERIC_1%GENERIC_OUT_BASE_NAME_GENERIC_1 Writer Parameters
+DEFAULT_MACRO GENERIC_OUT_FORMAT_GENERIC_1 $(OutputFormat)
+GENERIC_1_FORMAT "$(GENERIC_OUT_FORMAT_GENERIC_1)"
+GUI WRITERPICK GENERIC_OUT_FORMAT_GENERIC_1 Output Format:
+DEFAULT_MACRO GENERIC_OUT_BASE_NAME_GENERIC_1 
+GENERIC_1_BASE_NAME "$(GENERIC_OUT_BASE_NAME_GENERIC_1)"
+GUI OPTIONAL TEXT GENERIC_OUT_BASE_NAME_GENERIC_1 Base filename
+#!----------------------------------------------------------------------
+#! Are we to operate in dynamic schema mode?
+#!----------------------------------------------------------------------
+#DEFAULT_VALUE DYNAMIC_SCHEMA No
+#-GUI CHOICE DYNAMIC_SCHEMA No%Yes Dynamic Schema Mode
+DEFAULT_MACRO GENERIC_OUT_FME_GROUP_NAMED2_GENERIC_1 
+GUI OPTIONAL DISCLOSUREGROUP GENERIC_OUT_FME_GROUP_NAMED2_GENERIC_1 GENERIC_OUT_MIME_TYPE_GENERIC_1 FME Server Parameters
+# =====================================================================
+# Set the mime type. Note -- it is actually only used inside of workspaces
+# as a FORMAT_PARAMETER which even then is parsed only by the FME Server
+# Repository Manager
+# The list of mime types below is far from complete but was determined from
+# http://en.wikipedia.org/wiki/Internet_media_type as the common types.
+DEFAULT_MACRO GENERIC_OUT_MIME_TYPE_GENERIC_1 text/plain
+GENERIC_1_MIME_TYPE "$(GENERIC_OUT_MIME_TYPE_GENERIC_1)"
+GUI OPTIONAL STRING_OR_CHOICE GENERIC_OUT_MIME_TYPE_GENERIC_1 application/json%application/pdf%application/x-dvi%application/x-shockwave-flash%application/x-rar-compressed%application/x-tar%application/zip%audio/mpeg%audio/vnd.rn-realaudio%audio/x-ms-wma%audio/x-wav%image/gif%image/jpeg%image/png%image/svg+xml%image/tiff%text/css%text/csv%text/html%text/plain%text/xml%video/mp4%video/mpeg%video/quicktime%video/x-ms-wmv MIME Type:
+# ============================================================================
+# Opt in for destination dataset type vs format type validation
+DEFAULT_MACRO GENERIC_OUT_DESTINATION_DATASETTYPE_VALIDATION_GENERIC_1 Yes
+GENERIC_1_DESTINATION_DATASETTYPE_VALIDATION "$(GENERIC_OUT_DESTINATION_DATASETTYPE_VALIDATION_GENERIC_1)"
+# ============================================================================ 
+GENERIC_1_GENERATE_FME_BUILD_NUM 19238
+DEFAULT_MACRO READER_SCHEMAS_TO_SKIP_GENERIC_1 
+GENERIC_1_READER_SCHEMAS_TO_SKIP $(READER_SCHEMAS_TO_SKIP_GENERIC_1)
+GENERIC_1_DATASET "$(DestDataset_GENERIC_1)"
+#! END_DEST_HEADER
+#! START_WB_HEADER
+#! END_WB_HEADER
+#! END_HEADER
+
+LOG_FILENAME "$(FME_MF_DIR)exercise-use-fanouts-complete.log"
+LOG_APPEND NO
+LOG_MAX_FEATURES 200
+LOG_MAX_RECORDED_FEATURES 200
+FME_REPROJECTION_ENGINE FME
+FME_IMPLICIT_CSMAP_REPROJECTION_MODE Auto
+FME_GEOMETRY_HANDLING Enhanced
+FME_STROKE_MAX_DEVIATION 0
+FME_NAMES_ENCODING windows-1252
+FME_BULK_MODE_THRESHOLD 
+LAST_SAVE_BUILD "FME 2024.1.0.0 (20240628 - Build 24612 - WIN64)"
+DEFAULT_MACRO DATASET_KEYWORD_FILEGDB_1 FILEGDB_1
+DEFAULT_MACRO DATASET_KEYWORD_GENERIC_1 GENERIC_1
+# -------------------------------------------------------------------------
+
+FILEGDB_1_READER_META_ATTRIBUTES fme_feature_type
+
+# -------------------------------------------------------------------------
+
+FILEGDB_1_FEATURE_TYPES $(FEATURE_TYPES)
+MULTI_READER_CONTINUE_ON_READER_FAILURE No
+
+# -------------------------------------------------------------------------
+
+MACRO WORKSPACE_NAME exercise-use-fanouts-complete
+MACRO FME_VIEWER_APP fmedatainspector
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RoutingFactory   FACTORY_NAME "Router and Unexpected Input Remover"   COMMAND_PARM_EVALUATION SINGLE_PASS   MULTI_READER_KEYWORD $(DATASET_KEYWORD_FILEGDB_1)   INPUT FEATURE_TYPE *    ROUTE FILEGDB FILEGDB_1::FoodVendors multi_reader_keyword,$(DATASET_KEYWORD_FILEGDB_1) TO FME_GENERIC ::FoodVendors ALIAS_GEOMETRY    MERGE_INPUT Yes   OUTPUT ROUTED FEATURE_TYPE *
+FILEGDB_1_MERGE_DEF FILEGDB_1::FoodVendors GLOB * DEFLINE filegdb_type,geodb_point,filegdb_where_wwjd,,fme_attribute_reading,all,VendorID,smallint,VendorName,text<openparen>48<closeparen>,VendorDescription,text<openparen>16<closeparen>,OBJECTID,objectid,Subzone,text<openparen>30<closeparen>,LibraryID,text<openparen>6<closeparen>,ParkURL,text<openparen>100<closeparen>,CentreName,text<openparen>30<closeparen>,LibraryURL,text<openparen>80<closeparen>,CentreURL,text<openparen>50<closeparen>,Schedule,text<openparen>30<closeparen>,LibraryName,text<openparen>30<closeparen>,StationName,text<openparen>30<closeparen>,Description,text<openparen>75<closeparen>,Zone,text<openparen>30<closeparen>,BookCount,int,ParkName,text<openparen>30<closeparen>,Regulation,text<openparen>75<closeparen>,FountainID,smallint,LibraryAddress,text<openparen>30<closeparen>,Circulation,int,ParkAddress,text<openparen>50<closeparen>,Location,text<openparen>50<closeparen>,CentreAddress,text<openparen>30<closeparen>,NumAddresses,smallint,UserVisits,int,Maintainer,text<openparen>16<closeparen>
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory    FACTORY_NAME "FoodVendors_FILEGDB_1 Splitter"    INPUT FEATURE_TYPE FoodVendors    OUTPUT FEATURE_TYPE FoodVendors_FILEGDB_1
+DEFAULT_MACRO WB_CURRENT_CONTEXT
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * RoutingFactory FACTORY_NAME "Destination Feature Type Routing Correlator"   COMMAND_PARM_EVALUATION SINGLE_PASS   INPUT FEATURE_TYPE *    ROUTE FME_GENERIC FoodVendors_FILEGDB_1 TO GENERIC __GO_TO_FINAL_OUTPUT_ROUTER__ multi_writer_id,0,<at>SupplyAttributes<openparen>ENCODED<comma>fme_template_feature_type<comma>NewFeatureType<closeparen>,<at>EvaluateExpression<openparen>ATTR_CREATE_EXPR<comma>__wb_out_feat_type__<comma><lt>at<gt>Value<lt>openparen<gt>fme_feature_type<lt>closeparen<gt><comma>NewFeatureType<closeparen> GEOMETRY   FEATURE_TYPE_ATTRIBUTE __wb_out_feat_type__   OUTPUT ROUTED FEATURE_TYPE *    OUTPUT NOT_ROUTED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 [FME_GetAttribute fme_template_feature_type] 818060 818061 fme_warn")
+# -------------------------------------------------------------------------
+
+FACTORY_DEF * TeeFactory   FACTORY_NAME "Final Output Nuker"   INPUT FEATURE_TYPE __nuke_me__
+
+# -------------------------------------------------------------------------
+GENERIC_1_DEF NewFeatureType   fme_type                     fme_any   VendorID                     int16   VendorName                   varchar(48)   VendorDescription            varchar(16)   OBJECTID                     int32   Subzone                      varchar(30)   LibraryID                    varchar(6)   ParkURL                      varchar(100)   CentreName                   varchar(30)   LibraryURL                   varchar(80)   CentreURL                    varchar(50)   Schedule                     varchar(30)   LibraryName                  varchar(30)   StationName                  varchar(30)   Description                  varchar(75)   Zone                         varchar(30)   BookCount                    int32   ParkName                     varchar(30)   Regulation                   varchar(75)   FountainID                   int16   LibraryAddress               varchar(30)   Circulation                  int32   ParkAddress                  varchar(50)   Location                     varchar(50)   CentreAddress                varchar(30)   NumAddresses                 int16   UserVisits                   int32   Maintainer                   varchar(16)
