@@ -1,16 +1,12 @@
 # FME Form Advanced – Mini Projects
 
-### Topics Covered in Part 1
+### Skills Gained
 - Archive & web format processing
 - Ordered data flows and QA
 - Parameterized, multi-location writing
 - Custom transformers & modular design
 - Mid-workflow reading/writing
 - Workspace comparison and performance tuning
-
----
-
-### Topics Covered in Part 2
 - Using the generic mode for flexible format handling
 - Schema mapping from incoming or external data
 - Automating schema construction with `SchemaScanner`
@@ -18,7 +14,7 @@
 
 ---
 
-## Tools & Transformers Used
+## Techniques Involved
 
 - FME Form (Advanced Workbench features)
 - Parameters: Published, Private, User Parameters
