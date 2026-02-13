@@ -1,16 +1,6 @@
-# Mini Project: Debugging Workspaces with FME Form
+# Debugging Workspaces with FME Form
 
-[![FME Form](https://img.shields.io/badge/FME-Form%202024-orange?logo=fme)](https://www.safe.com/fme/)
-[![Course Module](https://img.shields.io/badge/Module-Day%205%20Completed-brightgreen)](https://academy.safe.com/path/fme-form-basic/debug-workspaces/163870)
-[![Skill Focus](https://img.shields.io/badge/Focus-Debugging%20Workspaces-blue)](#)
-
-This mini project highlights my work on **Day 5** of the [FME Form Basic course](https://academy.safe.com/path/fme-form-basic/debug-workspaces/163870), where I engaged in exercises focused on debugging FME workspaces. The experience enhanced my ability to identify, diagnose, and resolve issues within data transformation workflows.
-
----
-
-## What I Did
-
-I completed a series of exercises that involved:
+## Skills Gained
 
 - Utilizing **breakpoints** to pause and inspect data flow at specific points in the workspace.
 - Employing the **Inspector** transformer to visualize and verify data at various stages.
@@ -20,7 +10,7 @@ I completed a series of exercises that involved:
 
 ---
 
-## Project Workflow Overview
+## Workflow
 
 ### Input:
 - Sample datasets with intentional errors and inconsistencies to simulate real-world debugging scenarios.
@@ -70,6 +60,3 @@ Debugging_Workspaces/
 ├── PlanningRestrictions.gpkg # GeoPackage for planning restrictions
 └── sequential_project_workflow.png # Workflow diagram for project steps
 ```
----
-
-> This mini-project represents my dedication to mastering FME's debugging capabilities and ensuring robust data transformation processes.
