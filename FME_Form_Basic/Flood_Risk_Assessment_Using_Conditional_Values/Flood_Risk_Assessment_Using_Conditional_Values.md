@@ -1,22 +1,19 @@
 # Flood Risk Assessment Using Conditional Values
 
-## About the exercise
+## Project Overview
 
-This is a hands-on exercise from the **FME Form Basic course** by Safe Software. It demonstrates **how to assign flood risk scores to address points by using conditional logic based on elevation and proximity to coastal zones.** The entire workflow was built and executed using **FME Workbench 2024.2**, showcasing **real-world attribute transformation** and **spatial analysis techniques.**
+This covers how to assign flood risk scores to address points by using conditional logic based on elevation and proximity to coastal zones.
 
 ---
 
 ## Tools Used
 
-- **FME Workbench**  
-  For designing, building, and executing the flood risk assessment workflow.
-
-- **FME Data Inspector**  
-  To visually inspect and verify the flood risk values assigned to each address.
-
+- FME Workbench
+- FME Data Inspector
+  
 ---
 
-## Workflow Overview
+## Workflow
 
 1. **Read Input Datasets**:  
    - Postal addresses  
@@ -65,22 +62,13 @@ This is a hands-on exercise from the **FME Form Basic course** by Safe Software.
 
 ## Learnings & Reflection
 
-✔️ Gained hands-on experience combining raster and vector data  
-✔️ Practiced using conditional expressions within `AttributeManager`  
-✔️ Improved skills in overlay analysis and attribute management  
-✔️ Understood the importance of data preparation for spatial risk analysis  
-✔️ Completed a mini-project demonstrating both spatial and attribute transformations in FME
+- Gained hands-on experience combining raster and vector data
+- Practiced using conditional expressions within `AttributeManager`  
+- Improved skills in overlay analysis and attribute management  
+- Understood the importance of data preparation for spatial risk analysis  
+- Completed a mini-project demonstrating both spatial and attribute transformations in FME
 
 ---
 
 ## Demo
 [![Demo Video](thumbnail.png)](https://github.com/user-attachments/assets/be993918-595a-4f70-8b1b-fb9ec0f58118)
-
-## File Structure
-```
-Flood_Risk_Assessment_Using_Conditional_Values/
-├── exercise-flood-risk-project-complete.fmw # Final FME workspace using conditional logic
-├── Flood_Risk_Assessment_Using_Conditional_Values.md # Project documentation and explanation
-└── flood_risk_project_demo.mp4 # Demo video walkthrough of the flood risk workflow
-```
----
