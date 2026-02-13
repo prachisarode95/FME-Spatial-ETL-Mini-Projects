@@ -1,9 +1,5 @@
 # FME Form Spatial ETL Mini Projects
 
-[![FME](https://img.shields.io/badge/FME-Data_Integration-orange?logo=safe-software&logoColor=white)](https://www.safe.com/fme/)
-
----
-
 ## Projects Built
 
 - City-wise spatial data transformation and automation  
