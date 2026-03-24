@@ -1,26 +1,11 @@
-# FME Form Spatial ETL Mini Projects
-
-## Projects Built
-
-- City-wise spatial data transformation and automation  
-- Dynamic reading, processing, and writing of GIS datasets 
-- Flood risk assessment using attribute conditions and logic
-- Error handling and quality checking in ETL workflows
-- Automated format conversion and data standardization 
-
----
+# FME Form Spatial ETL Exercises
 
 ## Skills Gained
-
-**Basic**
 
 - Reading and transforming spatial and tabular data  
 - Format conversion (SHP, GeoPackage, CSV, KML, Excel)
 - Data cleaning and attribute management
 - Workflow design and automation using FME Workbench  
-
-**Advanced**
-
 - Schema mapping and automated schema handling  
 - Parameterized workflows for reusable automation 
 - Custom transformers and modular workflow design
